@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lag="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+ integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" 
+ crossorigin="anonymous">
+</head>
+<body>
+
+<div align="center" class="container my-2">
+
+	<h1> Stock List</h1>
+	<a th:href = "@{/newstockform}" class="btn btn-primary btn-sm mb-3"> Add  Stock </a>
+	<table border="1" class="table table-striped table-responsive-md">
+		<thead>
+		<tr>
+		<th> Stock Id </th>
+		<th> company Name </th>
+		<th> Stock Price </th>
+		<th> Company start Name </th>
+		<th> Actions </th>
+		</tr>
+		</thead>
+		
+		<tbody>
+		<tr th:each="stock : ${stockList}">
+		<td th:text="${stock.stockId}"></td>
+		<td th:text="${stock.companyName}"></td>
+		<td th:text="${stock.stockPrice}"></td>
+		<td th:text="${stock.companyStartDate}"></td>
+		<td> <a th:href="@{/updatestockform/{id}(id=${stock.stockId})}" class="btn btn-primary"> Update </a>
+		</tr>
+		</tbody>
+	
+	
+	
+	</table>
+
+
+</div>
+
+</body>
+</html>

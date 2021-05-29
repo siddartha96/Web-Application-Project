@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lag="en" xmlns:http://www.thymeleaf.org>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+</head>
+<body>
+
+	<div class="container">
+		<h1>Stock Management</h1>
+		<hr>
+		<h2>Save Stock</h2>
+		<form action="#" th:action="@{savestocks}" th:object="${stock}"
+			method="post">
+
+			<input type="text" placeholder="company Name"
+				th:field="*{companyName}" class="form-control mb-4 col-4"> <input
+				type="text" placeholder="Stock" th:field="*{stockPrice}"
+				class="form-control mb-4 col-4"> <input type="text"
+				placeholder="company Start Date" th:field="*{companyStartDate}"
+				class="form-control mb-4 col-4">
+
+			<button type="submit" class="btn btn-info col-2">update stock</button>
+		</form>
+
+	</div>
+
+</body>
+</html>
